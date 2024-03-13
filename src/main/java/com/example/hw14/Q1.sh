@@ -40,9 +40,29 @@ function delete_task() {
     echo "Task deleted."
 }
 
+
 function show_deleted() {
     echo "Tasks deleted:"
     cat "$deleted_file"
+}
+
+
+function search_tasks() {
+    read -p "Enter a keyword to search for: " keyword
+    echo "Results for '$keyword':"
+    grep -i "$keyword" "$1"
+}
+
+function search_done() {
+    search_tasks "$done_file"
+}
+
+function search_todo() {
+    search_tasks "$todo_file"
+}
+
+function search_deleted() {
+    search_tasks "$deleted_file"
 }
 
 while true; do
@@ -52,7 +72,10 @@ while true; do
     echo "4. Show tasks done"
     echo "5. Delete a task"
     echo "6. Show tasks deleted"
-    echo "7. Exit"
+    echo "7. Search tasks done"
+    exho "8. Search tasks to do"
+    echo "9. Search tasks deleted"
+    echo "10. Exit"
 
     read -p "Choose an option: " choice
 
@@ -70,9 +93,16 @@ while true; do
         6)
             show_deleted;;
         7)
-            break;;
+            search_done;;
+        8)
+          search_todo;;
+        9)
+          search_deleted;;
+        10)
+          break ;;
         *)
-            echo "Invalid option. Please try again.";;
+          echo "Invalid option. Please try again.";;
+
     esac
 done
 
