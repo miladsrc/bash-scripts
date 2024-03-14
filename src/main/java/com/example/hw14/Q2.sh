@@ -21,8 +21,8 @@ while true; do
     echo "'Hello World' added"
     ;;
   3)
-    sed -i 's/world/bash/g' file*.txt
-    echo "replace 'word' with 'bash' in files is done !"
+    sed -i 's/World/bash/g' file*.txt
+    echo "replace 'world' with 'bash' in files is done !"
     ;;
   *)
     echo "You'r choice is not in menu du!"

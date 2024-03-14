@@ -73,7 +73,7 @@ while true; do
     echo "5. Delete a task"
     echo "6. Show tasks deleted"
     echo "7. Search tasks done"
-    exho "8. Search tasks to do"
+    echo "8. Search tasks to do"
     echo "9. Search tasks deleted"
     echo "10. Exit"
 
